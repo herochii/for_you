@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>История о Дамырак</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем шрифт Marck Script с поддержкой русского языка напрямую -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Marck+Script&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Контейнер для падающих сердечек -->
+    <div id="hearts-container"></div>
+
+    <!-- Главный экран со слайд-шоу -->
+    <header class="hero">
+        <!-- Видео-фон, который играет по кругу без звука -->
+        <video autoplay muted loop playsinline class="video-bg">
+            <source src="images/ECC469B3-374F-41D3-8CA6-6ACCAD8324E0.mp4" type="video/mp4">
+            Ваш браузер не поддерживает теги видео.
+        </video>
+
+        <!-- Контент поверх слайд-шоу -->
+        <div class="hero-content">
+            <h1 class="romantic-title">Дамырак</h1>
+            <p class="subtitle">любимая моя, которая меняет мой мир</p>
+        </div>
+
+        <!-- Плеер -->
+        <div class="music-player">
+            <p>Включи музыку ✨</p>
+            <audio id="romantic-song" src="images/mix_6m14s (audio-joiner.com).mp3" controls loop></audio>
+        </div>
+    </header>
+
+    <!-- Блок хронологии (Наши даты) -->
+    <section class="timeline-section">
+        <h2>Как всё начиналось</h2>
+        <div class="timeline">
+            <!-- Первая дата -->
+            <div class="timeline-item">
+                <div class="timeline-date">8 Августа</div>
+                <div class="timeline-content">
+                    <h3>Первая встреча</h3>
+                    <p>День, когда наши глаза встретились в первый раз. Этот момент перевернул всё, и мир вокруг стал намного ярче.</p>
+                </div>
+            </div>
+            <!-- Вторая дата -->
+            <div class="timeline-item">
+                <div class="timeline-date">29 Августа 2025</div>
+                <div class="timeline-content">
+                    <h3>Начало нашей истории</h3>
+                    <p>Официальный день, когда мы решили идти по этой жизни рука об руку. Начало нашего общего счастливого пути.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок с точным счетчиком времени -->
+    <section class="counter-section">
+        <h2>Мы счастливы вместе уже</h2>
+        <div id="countdown">
+            <div class="time-block"><span id="days">0</span><p>дней</p></div>
+            <div class="time-block"><span id="hours">0</span><p>часов</p></div>
+            <div class="time-block"><span id="minutes">0</span><p>минут</p></div>
+            <div class="time-block"><span id="seconds">0</span><p>секунд</p></div>
+        </div>
+    </section>
+
+    <!-- Галерея воспоминаний -->
+    <section class="gallery">
+        <h2>Моменты, которые я ценю</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="images/IMG_8831.JPG" alt="Прекрасный момент">
+                <div class="card-desc">
+                    <h3>Прекрасные моменты</h3>
+                    <p>Твоя улыбка — лучшее, что происходит со мной каждый день.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/IMG_8696(2).PNG" alt="Поездка">
+                <div class="card-desc">
+                    <h3>Наши воспоминания</h3>
+                    <p>Лучшие моменты создаются только рядом с тобой.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Романтичное послание -->
+    <footer class="love-letter">
+        <div class="letter-content">
+            <h2>Просто спасибо за то, что ты есть...</h2>
+            <p>Дамырак, этот сайт — лишь малая часть того, как сильно ты мне дорога. Спасибо за твою нежность, теплоту и за то, что делаешь меня самым счастливым человеком.</p>
+            <p class="signature">С любовью, Твой Боня</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
