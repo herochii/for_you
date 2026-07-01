@@ -33,3 +33,30 @@ function createHeart() {
     setTimeout(() => { heart.remove(); }, duration * 1000);
 }
 setInterval(createHeart, 400);
+
+// ================= ПРОВЕРКА РОМАНТИЧЕСКОГО ПАРОЛЯ =================
+function checkPassword() {
+    const userInput = document.getElementById('secret-input').value.trim().toLowerCase();
+    
+    // НАСТРОЙКА: Замените 'дамырак' на ваше секретное слово-пароль
+    const correctPassword = 'принцесса'; 
+
+    if (userInput === correctPassword) {
+        // Если пароль верный, плавно скрываем заставку
+        const gate = document.getElementById('password-gate');
+        gate.style.opacity = '0';
+        setTimeout(() => {
+            gate.style.display = 'none';
+        }, 500);
+    } else {
+        // Если неверный — показываем ошибку
+        document.getElementById('error-msg').style.display = 'block';
+    }
+}
+
+// Позволяет отправлять пароль по нажатию клавиши Enter
+document.getElementById('secret-input')?.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        checkPassword();
+    }
+});
