@@ -5,10 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>История о Дамырак</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Подключаем шрифт Marck Script с поддержкой русского языка напрямую -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Marck+Script&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- ИСПРАВЛЕНО: Правильное подключение каллиграфического шрифта Marck Script -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- ИСПРАВЛЕНО: Встроенные стили для жесткой блокировки экрана на мобильных телефонах -->
+    <style>
+        #password-gate {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            height: -webkit-fill-available !important;
+            background-color: #5a4b41 !important; /* Уютный кофейный фон закроет всё */
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            z-index: 999999 !important; /* Встанет поверх видео, текста и плеера */
+            box-sizing: border-box !important;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .gate-content {
+            background: rgba(255, 255, 255, 0.12) !important;
+            backdrop-filter: blur(15px) !important;
+            -webkit-backdrop-filter: blur(15px) !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            padding: 35px 25px !important;
+            border-radius: 24px !important;
+            text-align: center !important;
+            color: #ffffff !important;
+            max-width: 320px !important;
+            width: 85% !important;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3) !important;
+            font-family: 'Montserrat', sans-serif !important;
+        }
+
+        .gate-content h2 {
+            font-family: 'Playfair Display', serif !important;
+            margin-bottom: 15px !important;
+            font-size: 1.5rem !important;
+            color: #ffffff !important;
+            font-weight: 600 !important;
+        }
+
+        .gate-content p {
+            font-size: 0.9rem !important;
+            line-height: 1.5 !important;
+            opacity: 0.9 !important;
+            margin-bottom: 20px !important;
+            color: #ffffff !important;
+        }
+
+        #secret-input {
+            width: 100% !important;
+            padding: 14px 20px !important;
+            border-radius: 30px !important;
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+            background: rgba(255, 255, 255, 0.95) !important;
+            color: #333333 !important;
+            outline: none !important;
+            font-family: 'Montserrat', sans-serif !important;
+            margin-bottom: 15px !important;
+            text-align: center !important;
+            font-size: 1rem !important;
+            box-sizing: border-box !important;
+        }
+
+        .gate-content button {
+            background: #d4a373 !important;
+            color: #ffffff !important;
+            border: none !important;
+            padding: 14px 40px !important;
+            font-size: 1rem !important;
+            font-weight: 600 !important;
+            border-radius: 30px !important;
+            cursor: pointer !important;
+            font-family: 'Montserrat', sans-serif !important;
+            transition: all 0.3s !important;
+            width: 100% !important;
+        }
+
+        .gate-content button:hover {
+            background: #ffb5a7 !important;
+        }
+    </style>
 </head>
 <body>
 
@@ -16,31 +101,31 @@
     <div id="password-gate">
         <div class="gate-content">
             <h2>✨ Доступ только для любимой</h2>
-            <p>Введи слово которое я говорю постоянно, чтобы открыть историю о тебе:</p>
+            <p>Введи слово, которое я говорю постоянно, чтобы открыть историю о тебе:</p>
             <input type="text" id="secret-input" placeholder="Введите пароль...">
             <button onclick="checkPassword()">Войти ❤</button>
-            <p id="error-msg" style="color: #ffb5a7; margin-top: 10px; display: none;">Неверно, попробуй еще раз... 🥺</p>
+            <p id="error-msg" style="color: #ffb5a7; margin-top: 15px; display: none; font-weight: 600;">Неверно, попробуй еще раз... 🥺</p>
         </div>
     </div>
 
     <!-- Контейнер для падающих сердечек -->
     <div id="hearts-container"></div>
 
-    <!-- Главный экран со слайд-шоу -->
+    <!-- Главный экран -->
     <header class="hero">
-        <!-- Видео-фон, который играет по кругу без звука -->
+        <!-- Ваше видео-фон -->
         <video autoplay muted loop playsinline class="video-bg">
             <source src="images/ECC469B3-374F-41D3-8CA6-6ACCAD8324E0.mp4" type="video/mp4">
             Ваш браузер не поддерживает теги видео.
         </video>
 
-        <!-- Контент поверх слайд-шоу -->
+        <!-- Контент поверх видео -->
         <div class="hero-content">
             <h1 class="romantic-title">Дамырак</h1>
             <p class="subtitle">любимая моя, которая меняет мой мир</p>
         </div>
 
-        <!-- Плеер -->
+        <!-- Ваш объединенный музыкальный плеер -->
         <div class="music-player">
             <p>Включи музыку ✨</p>
             <audio id="romantic-song" src="images/mix_6m14s (audio-joiner.com).mp3" controls loop></audio>
@@ -56,7 +141,7 @@
                 <div class="timeline-date">8 Августа</div>
                 <div class="timeline-content">
                     <h3>Первая встреча</h3>
-                    <p>День, когда наши глаза встретились в первый раз. Этот момент перевернул всё, и мир вокруг стал намного ярче.</p>
+                    <p>День, когда наши глаза встретились в первый раз. Этот момент перевернул всё, и мир вокруг стал немного ярче.</p>
                 </div>
             </div>
             <!-- Вторая дата -->
@@ -70,7 +155,7 @@
         </div>
     </section>
 
-    <!-- Блок с точным счетчиком времени -->
+    <!-- Блок со счетчиком времени -->
     <section class="counter-section">
         <h2>Мы счастливы вместе уже</h2>
         <div id="countdown">
