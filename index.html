@@ -12,6 +12,17 @@
 </head>
 <body>
 
+    <!-- Окно блокировки сайта (Пароль) -->
+    <div id="password-gate">
+        <div class="gate-content">
+            <h2>✨ Доступ только для любимой</h2>
+            <p>Введи слово которое я говорю постоянно, чтобы открыть историю о тебе:</p>
+            <input type="text" id="secret-input" placeholder="Введите пароль...">
+            <button onclick="checkPassword()">Войти ❤</button>
+            <p id="error-msg" style="color: #ffb5a7; margin-top: 10px; display: none;">Неверно, попробуй еще раз... 🥺</p>
+        </div>
+    </div>
+
     <!-- Контейнер для падающих сердечек -->
     <div id="hearts-container"></div>
 
