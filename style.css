@@ -267,3 +267,69 @@ body {
     font-size: 1.4rem;
     color: #d4a373;
 }
+
+/* Стили для окна пароля */
+#password-gate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #5a4b41; /* Благородный кофейный фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; /* Перекрывает абсолютно всё */
+    transition: opacity 0.5s ease;
+}
+
+.gate-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    color: #fff;
+    max-width: 400px;
+    width: 90%;
+}
+
+.gate-content h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+}
+
+.gate-content p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+#secret-input {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.gate-content button {
+    background: #d4a373;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    transition: background 0.3s;
+}
+
+.gate-content button:hover {
+    background: #ffb5a7;
+}
