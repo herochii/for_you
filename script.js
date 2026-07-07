@@ -35,16 +35,25 @@ function createHeart() {
 setInterval(createHeart, 400);
 
 // ================= ПРОВЕРКА РОМАНТИЧЕСКОГО ПАРОЛЯ =================
+// ================= ПРОВЕРКА РОМАНТИЧЕСКОГО ПАРОЛЯ =================
 function checkPassword() {
     const userInput = document.getElementById('secret-input').value.trim().toLowerCase();
-    const correctPassword = 'принцесса'; // Ваш пароль
+    
+    // НАСТРОЙКА: Ваше секретное слово-пароль
+    const correctPassword = 'дамырак'; 
 
     if (userInput === correctPassword) {
         const gate = document.getElementById('password-gate');
+        
+        // 1. Плавно делаем заставку прозрачной
         gate.style.opacity = '0';
+        
+        // ИСПРАВЛЕНО: Полностью убираем блок заставки через полсекунды (после завершения анимации),
+        // чтобы освободить экран для кликов по плееру и галерее
         setTimeout(() => {
-            gate.style.display = 'none';
+            gate.style.setProperty('display', 'none', 'important');
         }, 500);
+        
     } else {
         document.getElementById('error-msg').style.display = 'block';
     }
