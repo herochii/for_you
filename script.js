@@ -40,7 +40,7 @@ function checkPassword() {
     const userInput = document.getElementById('secret-input').value.trim().toLowerCase();
     
     // НАСТРОЙКА: Ваше секретное слово-пароль
-    const correctPassword = 'дамырак'; 
+    const correctPassword = 'принцесса'; 
 
     if (userInput === correctPassword) {
         const gate = document.getElementById('password-gate');
