@@ -79,9 +79,29 @@ body {
     z-index: 3; /* Поднимаем текст выше затемнения */
 }
 
+/* Перемещаем плеер на самый передний план */
 .music-player {
-    z-index: 3; /* Поднимаем плеер выше затемнения */
+    position: absolute;
+    bottom: 40px;
+    background: rgba(25, 25, 25, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    
+    /* ИСПРАВЛЕНО: Жестко поднимаем плеер над всеми фоновыми слоями и напылениями */
+    z-index: 9999 !important; 
 }
+
+.music-player p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
 
 .romantic-title {
     font-family: 'Marck Script', cursive !important;
